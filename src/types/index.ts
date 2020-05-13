@@ -1,4 +1,3 @@
-export const Services = {
-    Stage: Symbol('Stage'),
-    States: Symbol('States')
+export const ServiceTypes = {
+	Stage: Symbol('Stage'),
 };

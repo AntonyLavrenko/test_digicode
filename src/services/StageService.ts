@@ -14,12 +14,11 @@ export class StageService extends EventEmitter implements ServiceInterface {
 	private renderer: PIXI.WebGLRenderer | PIXI.CanvasRenderer;
 
 	stage: PIXI.Container;
-	controlContainer: PIXI.Container;
-	bgContainer: PIXI.Container;
 	reelsContainer: PIXI.Container;
+	hitBox: PIXI.Graphics;
 
-	width = 960;
-	height = 536;
+	width = 800;
+	height = 500;
 
 	constructor() {
 		super();
@@ -37,9 +36,14 @@ export class StageService extends EventEmitter implements ServiceInterface {
 		this.canvasHtmlBlock.appendChild(this.renderer.view);
 
 		this.stage = new PIXI.Container();
-		this.bgContainer = this.stage.addChild(new PIXI.Container());
+
+		const hitBox = new PIXI.Graphics();
+		hitBox.beginFill(0xFFFFFF);
+		hitBox.drawRect(0, 0, this.width, this.height);
+		hitBox.endFill();
+
+		this.hitBox = this.stage.addChild(hitBox);
 		this.reelsContainer = this.stage.addChild(new PIXI.Container());
-		this.controlContainer = this.stage.addChild(new PIXI.Container());
 
 		this.addTicker(this.render);
 	}

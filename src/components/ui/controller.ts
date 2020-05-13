@@ -1,10 +1,13 @@
 import { AbstractController } from "../../interfaces";
-import {injectable} from "inversify";
-import {UIModel} from "./model";
+import {inject, injectable} from "inversify";
+import {UITypes} from "./types";
+import {IUIModel} from "./interfaces";
 
 @injectable()
 export class UIController implements AbstractController {
-	constructor(private uiModel: UIModel) {
+	constructor(
+		@inject(UITypes.Model)
+		private uiModel: IUIModel) {
 
 	}
 

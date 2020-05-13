@@ -16,21 +16,29 @@
             <span>Surface area occupied by shapes</span>: <span id="shapesArea"></span>
         </div>
     </div>
-    <div id="container"></div>
+    <div class="content">
+        <div id="container"></div>
+    </div>
     <div class="ui">
         <div class="ui__group">
             <div class="btn">
-                <button id="countShapeDec">-</button>
-                <button id="countShapeInc">+</button>
+                <div class="btn__item" id="countShapeDec">-</div>
+                <div class="btn__item" id="countShapeInc">+</div>
             </div>
-            <label id="countShapeValue"></label>
+            <label class="ui_value">
+                <span>Shapes per/sec: </span>
+                <strong id="countShapeValue"></strong>
+            </label>
         </div>
         <div class="ui__group">
             <div class="btn">
-                <button id="countGravityDec">-</button>
-                <button id="countGravityInc">+</button>
+                <div class="btn__item" id="countGravityDec">-</div>
+                <div class="btn__item" id="countGravityInc">+</div>
             </div>
-            <label id="countGravityValue"></label>
+            <label class="ui_value">
+                <span>Gravity value: </span>
+                <strong id="countGravityValue"></strong>
+            </label>
         </div>
     </div>
 </div>
